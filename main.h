@@ -1,6 +1,7 @@
-#ifndef HEADER_H
-#define HEADER_H
+#ifndef MAIN_H
+#define MAIN_H
 #include <stdarg.h>
+#include <stdio.h>
 int _printf(const char *format, ...);
 int _vprintf(const char *format, va_list list);
 int _putchar(char c);
