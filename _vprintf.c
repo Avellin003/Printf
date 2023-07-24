@@ -72,6 +72,7 @@ void print_fmt_spec(char c, va_list list)
 		case 'd':
 			break;
 		case 's':
+			print_string(va_arg(list, char*));
 			break;
 	}
 }
