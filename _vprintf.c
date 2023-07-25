@@ -69,9 +69,9 @@ void print_fmt_spec(char c, va_list list, int *len)
 			(*len)++;
 			break;
 		case 'i':
+			print_integer(va_arg(list, int));
 			break;
 		case 'd':
-			print_integer(va_arg(list, int));
 			break;
 		case 's':
 			*len += print_string(va_arg(list, char*));
