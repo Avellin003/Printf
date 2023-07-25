@@ -6,7 +6,7 @@
  * description: prints a string to stdout
  * Return: length of printed strign
  */
-int print_string(char *str)
+int print_string(const char *str)
 {
 	int i, len;
 

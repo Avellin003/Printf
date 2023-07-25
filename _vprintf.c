@@ -73,7 +73,7 @@ void print_fmt_spec(char c, va_list list, int *len)
 		case 'd':
 			break;
 		case 's':
-			*len += print_string(va_arg(list, char*));
+			*len += print_string(va_arg(list, const char *));
 			break;
 		case '%':
 			print_per_sign();
