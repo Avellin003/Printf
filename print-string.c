@@ -3,18 +3,22 @@
 /**
  * print_string - function prints string to stdout
  * @str: pointer to a string
- * Return : void
+ * description: prints a string to stdout
+ * Return: length of printed strign
  */
-void print_string(char *str)
+int print_string(char *str)
 {
-	int i = 0;
+	int i, len;
 
+	i = 0;
+	len = 0;
 	if (str != NULL)
 	{
 		while (str[i] != '\0')
 		{
 			_putchar(str[i]);
 			i++;
+			len++;
 		}
 	}
 	else
@@ -26,4 +30,5 @@ void print_string(char *str)
 			_putchar(ptr[i]);
 		}
 	}
+	return (len);
 }

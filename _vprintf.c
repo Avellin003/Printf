@@ -40,8 +40,7 @@ int _vprintf(const char *format, va_list list)
 		}
 		else
 		{
-			print_fmt_spec(*format, list);
-			num_char_prted++;
+			print_fmt_spec(*format, list, &num_char_prted);
 			/*set mode to 0 and resume normal printing*/
 			mode = 0;
 		}
@@ -54,25 +53,31 @@ int _vprintf(const char *format, va_list list)
 * print_fmt_spec - writes characters to stdout
 * @c: character specifier
 * @list: va_list argument
+* @len: num of characer printed
 * description: writes characters to stdout
 * Return: nothing
 */
 
 
-void print_fmt_spec(char c, va_list list)
+void print_fmt_spec(char c, va_list list, int *len)
 {
 	switch (c)
 	{
 		case 'c':
 		/*get character from va_list */
 			_putchar(va_arg(list, int));
+			(*len)++;
 			break;
 		case 'i':
 			break;
 		case 'd':
 			break;
 		case 's':
-			print_string(va_arg(list, char*));
+			*len += print_string(va_arg(list, char*));
+			break;
+		case '%':
+			print_per_sign();
+			(*len)++;
 			break;
 	}
 }
