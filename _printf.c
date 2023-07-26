@@ -13,6 +13,8 @@ int _printf(const char *format, ...)
 	int len;
 	va_list args;
 
+	if (format == NULL)
+		return (-1);
 	va_start(args, format);
 	len = _vprintf(format, args);
 	va_end(args);
