@@ -28,6 +28,7 @@ int print_string(const char *str)
 		for (i = 0; ptr[i] != '\0'; ++i)
 		{
 			_putchar(ptr[i]);
+			len++;
 		}
 	}
 	return (len);
