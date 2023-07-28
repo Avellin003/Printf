@@ -81,5 +81,9 @@ void print_fmt_spec(char c, va_list list, int *len)
 			print_per_sign();
 			(*len)++;
 			break;
+		default:
+			_putchar('%');
+			_putchar(c);
+			*len += 2;
 	}
 }
